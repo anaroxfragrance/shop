@@ -191,23 +191,22 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
 
 <!-- Testimonials Section -->
 
-
 <section id="Order">
-<div class="commande-global">
-  <h3>Votre commande</h3>
+  <div class="commande-global">
+    <h3>Votre commande</h3>
 
- <textarea id="parfum1" placeholder="Parfum 1"></textarea>
-<textarea id="parfum2" placeholder="Parfum 2"></textarea>
-<textarea id="parfum3" placeholder="Parfum 3"></textarea>
-<textarea id="parfum4" placeholder="Parfum 4"></textarea>
-<textarea id="parfum5" placeholder="Parfum 5"></textarea>
-<textarea id="Nom Complet" placeholder="Nom Complet"></textarea>
-<textarea id="ville" placeholder="Ville"></textarea>
-<textarea id="Tel" placeholder="Tel"></textarea>
+    <textarea id="parfum1" placeholder="Parfum 1"></textarea>
+    <textarea id="parfum2" placeholder="Parfum 2"></textarea>
+    <textarea id="parfum3" placeholder="Parfum 3"></textarea>
+    <textarea id="parfum4" placeholder="Parfum 4"></textarea>
+    <textarea id="parfum5" placeholder="Parfum 5"></textarea>
 
-<button type="button" onclick="sendWhatsApp()">Commander</button>
+    <textarea id="nom" placeholder="Nom Complet"></textarea>
+    <textarea id="ville" placeholder="Ville"></textarea>
+    <textarea id="tel" placeholder="Téléphone"></textarea>
 
-</div>
+    <button type="button" onclick="sendWhatsApp()">Commander</button>
+  </div>
 </section>
 
 <script>
@@ -217,25 +216,29 @@ function sendWhatsApp() {
   const p3 = document.getElementById("parfum3").value;
   const p4 = document.getElementById("parfum4").value;
   const p5 = document.getElementById("parfum5").value;
-  const Nom Complet = document.getElementById("Nom Complet").value;
+  const nom = document.getElementById("nom").value;
   const ville = document.getElementById("ville").value;
-  const Tel = document.getElementById("téléphone ").value;
+  const tel = document.getElementById("tel").value;
 
-  let message = "🧴 Nouvelle commande:\n";
+  let message = "🧴 Nouvelle commande:\n\n";
 
   if (p1) message += "Parfum 1: " + p1 + "\n";
   if (p2) message += "Parfum 2: " + p2 + "\n";
   if (p3) message += "Parfum 3: " + p3 + "\n";
   if (p4) message += "Parfum 4: " + p4 + "\n";
   if (p5) message += "Parfum 5: " + p5 + "\n";
-  if (ville) message += "Ville: " + ville + "\n";
 
-  const phoneNumber = "212693001032"; // بدون +
-  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  message += "\n👤 Nom: " + nom;
+  message += "\n🏙️ Ville: " + ville;
+  message += "\n📞 Tel: " + tel;
+
+  const phoneNumber = "212693001032"; // بلا +
+  const url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
 
   window.open(url, "_blank");
 }
 </script>
+
 
 <section id="about">
  
